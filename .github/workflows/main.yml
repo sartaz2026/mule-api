@@ -23,6 +23,7 @@ jobs:
         run: mvn clean package
 
       - name: Deploy to CloudHub
-        run: mvn clean deploy -DmuleDeploy \
-       -Danypoint.clientId=${{ secrets.ANYPOINT_CLIENT_ID }} \
-       -Danypoint.clientSecret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
+        run: |
+          mvn clean deploy -DmuleDeploy \
+          -Danypoint.clientId=${{ secrets.ANYPOINT_CLIENT_ID }} \
+          -Danypoint.clientSecret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
