@@ -1,0 +1,28 @@
+name: Mule CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
+      - name: Build Mule App
+        run: mvn clean package
+
+      - name: Deploy to CloudHub
+        run: mvn clean deploy -DmuleDeploy \
+       -Danypoint.clientId=${{ secrets.ANYPOINT_CLIENT_ID }} \
+       -Danypoint.clientSecret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
