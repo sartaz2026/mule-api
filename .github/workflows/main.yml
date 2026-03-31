@@ -19,11 +19,10 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v3
+      - name: Setup Maven 3.8.6
+        uses: stCarolas/setup-maven@v4
         with:
-          path: ~/.m2/repository
-          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          maven-version: 3.8.6
 
       - name: Build Mule App
         run: mvn -B clean package
