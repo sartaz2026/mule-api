@@ -36,6 +36,7 @@
                         <muleVersion>4.4.0</muleVersion>
                         <applicationName>demo-azure-api</applicationName>
                         <environment>Sandbox</environment>
+                        <organizationId>${anypoint.orgId}</organizationId>
                         <!-- <region>us-east-1</region> -->
                         <workers>1</workers>
                         <workerType>MICRO</workerType>
