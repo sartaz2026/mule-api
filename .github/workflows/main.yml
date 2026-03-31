@@ -13,17 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Java
+      - name: Setup Java 8
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '8'
 
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+
       - name: Build Mule App
-        run: mvn clean package
+        run: mvn -B clean package
 
       - name: Deploy to CloudHub
         run: |
-          mvn clean deploy -DmuleDeploy \
+          mvn -B clean deploy -DmuleDeploy \
           -Danypoint.clientId=${{ secrets.ANYPOINT_CLIENT_ID }} \
           -Danypoint.clientSecret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
