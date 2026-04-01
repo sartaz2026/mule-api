@@ -33,9 +33,8 @@
                 <configuration>
                     <cloudhub2Deployment>
                         <uri>https://anypoint.mulesoft.com</uri>
-                        <muleVersion>4.4.0</muleVersion>
-
-                        <applicationName>demo-azure-api</applicationName>
+                        <applicationName>demo-azure-api-v1</applicationName>
+                        <muleVersion>4.4-java17</muleVersion>
                         <environment>Sandbox</environment>
 
                         <!-- IMPORTANT: CloudHub 2.0 target -->
