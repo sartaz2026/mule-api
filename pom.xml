@@ -23,7 +23,7 @@
     <build>
         <plugins>
 
-            <!-- Mule Maven Plugin (ONLY ONE) -->
+            <!-- Mule Maven Plugin -->
             <plugin>
                 <groupId>org.mule.tools.maven</groupId>
                 <artifactId>mule-maven-plugin</artifactId>
@@ -31,21 +31,25 @@
                 <extensions>true</extensions>
 
                 <configuration>
-                    <cloudHub2Deployment>
+                    <cloudhub2Deployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <muleVersion>4.4.0</muleVersion>
+
                         <applicationName>demo-azure-api</applicationName>
                         <environment>Sandbox</environment>
-                        <!-- <organizationId>${anypoint.orgId}</organizationId> -->
-                        <region>Cloudhub-US-East-1</region> 
-                        <workers>1</workers>
-                        <workerType>MICRO</workerType>
+
+                        <!-- IMPORTANT: CloudHub 2.0 target -->
+                        <target>Cloudhub-US-East-1</target>
+
+                        <!-- Scaling -->
+                        <replicas>1</replicas>
+                        <vCores>0.1</vCores>
 
                         <!-- Connected App -->
                         <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
                         <connectedAppClientSecret>${anypoint.clientSecret}</connectedAppClientSecret>
                         <connectedAppGrantType>client_credentials</connectedAppGrantType>
-                    </cloudHub2Deployment>
+                    </cloudhub2Deployment>
                 </configuration>
             </plugin>
 
