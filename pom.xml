@@ -39,7 +39,7 @@
                         <environment>Sandbox</environment>
 
                         <!-- IMPORTANT: CloudHub 2.0 target -->
-                        <target>Cloudhub-US-East-1</target>
+                        <target>Cloudhub-US-East-2</target>
                         <!-- <region>us-east-1</region> -->
 
                         <!-- Scaling -->
