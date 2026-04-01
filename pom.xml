@@ -40,6 +40,7 @@
 
                         <!-- IMPORTANT: CloudHub 2.0 target -->
                         <target>Cloudhub-US-East-1</target>
+                        <region>us-east-1</region>
 
                         <!-- Scaling -->
                         <replicas>1</replicas>
