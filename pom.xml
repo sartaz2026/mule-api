@@ -34,11 +34,11 @@
                     <cloudhub2Deployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <applicationName>demo-azure-api-final</applicationName>
-                        <muleVersion>4.4.0:1e-java17</muleVersion>
+                        <muleVersion>4.11.2:3e</muleVersion>
                         <environment>Sandbox</environment>
 
                         <!-- IMPORTANT: CloudHub 2.0 target -->
-                        <target>Cloudhub-US-East-2</target>
+                        <target>US East (Ohio)</target>
                         <!-- <region>us-east-1</region> -->
 
                         <!-- Scaling -->
