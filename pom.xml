@@ -38,7 +38,7 @@
                         <environment>Sandbox</environment>
 
                         <!-- IMPORTANT: CloudHub 2.0 target -->
-                        <target>US East (Ohio)</target>
+                        <target>Cloudhub-US-East-2</target>
                         <!-- <region>us-east-1</region> -->
 
                         <!-- Scaling -->
