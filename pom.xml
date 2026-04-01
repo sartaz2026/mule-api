@@ -44,6 +44,7 @@
                         <!-- Scaling -->
                         <replicas>1</replicas>
                         <vCores>0.1</vCores>
+                        <provider>MC</provider>
 
                         <!-- Connected App -->
                         <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
