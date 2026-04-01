@@ -31,7 +31,7 @@
                 <extensions>true</extensions>
 
                 <configuration>
-                    <cloudHubDeployment>
+                    <cloudHub2Deployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <muleVersion>4.4.0</muleVersion>
                         <applicationName>demo-azure-api</applicationName>
@@ -45,7 +45,7 @@
                         <connectedAppClientId>${anypoint.clientId}</connectedAppClientId>
                         <connectedAppClientSecret>${anypoint.clientSecret}</connectedAppClientSecret>
                         <connectedAppGrantType>client_credentials</connectedAppGrantType>
-                    </cloudHubDeployment>
+                    </cloudHub2Deployment>
                 </configuration>
             </plugin>
 
