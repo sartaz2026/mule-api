@@ -33,3 +33,17 @@ jobs:
            -Danypoint.clientId=${{ secrets.ANYPOINT_CLIENT_ID }} \
            -Danypoint.clientSecret=${{ secrets.ANYPOINT_CLIENT_SECRET }} \
            -Danypoint.orgId=${{ secrets.ANYPOINT_ORG_ID }}
+      - name: Create settings.xml
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings>
+           <servers>
+            <server>
+          <id>ca.anypoint.credentials</id>
+          <username>${{ secrets.ANYPOINT_CLIENT_ID }}</username>
+          <password>${{ secrets.ANYPOINT_CLIENT_SECRET }}</password>
+          </server>
+           </servers>
+          </settings>
+    
